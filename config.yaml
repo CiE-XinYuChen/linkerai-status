@@ -1,4 +1,4 @@
-poll_interval_seconds: 60
+poll_interval_seconds: 3
 timeout_seconds: 5
 slow_threshold_ms: 1200
 max_incidents: 30
