@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+  <div class="page">
+    <div class="banner status-major_outage">
+      <div class="banner-title">Unexpected error</div>
+      <div class="banner-meta">{{ message }}</div>
+    </div>
+
+    <section class="card">
+      <div class="card-header">
+        <div>
+          <div class="eyebrow">Current overall</div>
+          <h2>{{ overall|status_label }}</h2>
+        </div>
+        <div class="tiny">Last updated {{ last_updated|fmt_time }}</div>
+      </div>
+      <div class="empty">Try again later. The monitoring worker continues running in the background.</div>
+    </section>
+  </div>
+{% endblock %}

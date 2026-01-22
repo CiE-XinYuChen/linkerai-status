@@ -1,0 +1,28 @@
+poll_interval_seconds: 60
+timeout_seconds: 5
+slow_threshold_ms: 1200
+max_incidents: 30
+services:
+  - name: LinkerAI API
+    url: https://api1.linkaeai.shaynechen.tech/health
+    method: GET
+    expected_statuses: [200]
+    component: Core API
+    headers:
+      Accept: application/json
+    verify_ssl: false
+  - name: Public Docs
+    url: https://api1.linkaeai.shaynechen.tech/docs
+    method: GET
+    expected_statuses: [200, 301, 302]
+    component: Developer Experience
+  - name: Management Console
+    url: https://api1.linkaeai.shaynechen.tech/docs
+    method: GET
+    expected_statuses: [200, 301, 302]
+    component: Console
+  - name: OTA Service
+    url: https://ota.linkerai.cn/
+    method: GET
+    reachable_only: true
+    component: OTA Delivery
