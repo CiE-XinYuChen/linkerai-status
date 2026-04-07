@@ -4,17 +4,24 @@ slow_threshold_ms: 1200
 max_incidents: 30
 services:
   - name: LinkerAI PROXY API
-    url: https://api1.linkerai.shaynechen.tech/health
+    url: https://api1.linkerai.shayne.asia/health
     method: GET
     expected_statuses: [200]
     component: "LinkerAI toy: BeiJing - XIAOZHI-PROXY"
     headers:
       Accept: application/json
   - name: ADMIN BOARD
-    url: https://xiaozhi.shaynechen.tech/health
+    url: https://xiaozhi.shayne.asia/health
     method: GET
     expected_statuses: [200]
     component: "LinkerAI toy: BeiJing - ADMIN BOARD"
+    headers:
+      Accept: application/json
+  - name: WEBSOCKET CORE
+    url: http://121.40.85.107:9003/health
+    method: GET
+    expected_statuses: [200]
+    component: "LinkerAI toy: WEBSOCKET CORE"
     headers:
       Accept: application/json
   - name: OTA Service
